@@ -13,15 +13,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val button = findViewById<Button>(R.id.button)
-        val text = findViewById<TextView>(R.id.textView)
-        val editText = findViewById<EditText>(R.id.editText)
+        val button2 = findViewById<Button>(R.id.button2)
         val intent = Intent(this, NewActivity::class.java)
 
 
         button.setOnClickListener {
-            val resultText = editText.text.toString()
-            intent.putExtra(NewActivity.INTENT_NAME,resultText)
+            intent.putExtra(NewActivity.INTENT_NAME,"КНОПКА")
             startActivity(intent)
+
         }
+        button2.setOnClickListener {
+            intent.putExtra(NewActivity.INTENT_NAME,"КНОПКА2")
+            startActivity(intent)
     }
-}
+}}
