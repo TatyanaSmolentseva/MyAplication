@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         val edit = sharedPreferences.edit()
 
         val save = findViewById<Button>(R.id.Save)
-        val textView = findViewById<TextView>(R.id.textView)
         val editText = findViewById<EditText>(R.id.editText)
-        val load = findViewById<Button>(R.id.Load)
+        val openNewScreen = findViewById<Button>(R.id.openNewScreen)
+        val intent = Intent(this, NewActivity::class.java)
+
 
 
         save.setOnClickListener {
@@ -34,9 +35,10 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        load.setOnClickListener {
-            val pulOut = sharedPreferences.getString("key","лажа")
-            textView.text = pulOut
+        openNewScreen.setOnClickListener {
+            sharedPreferences.getString("key","лажа")
+            startActivity(intent)
+
 
         }
 }}
